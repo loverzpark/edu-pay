@@ -1,0 +1,24 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Children</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let status of Allstatus">
+      <td>{{status.firstName}}</td>
+      <td>{{status.lastName}}</td>
+      <td>{{status.email}}</td>
+      <td>{{status.phone}}</td>
+      <td>{{status.children}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
