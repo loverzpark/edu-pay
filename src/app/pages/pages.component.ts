@@ -46,9 +46,9 @@ export class PagesComponent implements OnInit {
     public chooseMenuType(menuType) {
         this.settings.theme.menuType = menuType;
         if (menuType === 'mini') {
-            jQuery('.menu-item-link').tooltip('enable');
+            (<any>$('.menu-item-link')).tooltip('enable');
         } else {
-            jQuery('.menu-item-link').tooltip('disable');
+            (<any>$('.menu-item-link')).tooltip('disable');
         }
     }
 

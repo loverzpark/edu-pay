@@ -3,7 +3,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { MenuService } from '../menu.service';
 import { AppSettings } from '../../../../app.settings';
 import { Settings } from '../../../../app.settings.model';
-import {$} from 'jquery';
+
 
 
 @Component({
@@ -27,7 +27,7 @@ export class VerticalMenuComponent implements OnInit {
               window.scrollTo(0, 0);
               const activeLink = this.menuService.getActiveLink(this.menuItems);
               this.menuService.setActiveLink(this.menuItems, activeLink);
-            jQuery('.tooltip').tooltip('hide');
+            (<any>$('.tooltip')).tooltip('hide');
               if (window.innerWidth <= 768) {
                 this.settings.theme.showMenu = false;
               }
@@ -40,7 +40,7 @@ export class VerticalMenuComponent implements OnInit {
     this.menuService.createMenu(this.menuItems, menu_wrapper, 'vertical');
 
     if (this.settings.theme.menuType === 'mini') {
-    jQuery('.menu-item-link').tooltip();
+      (<any>$('.menu-item-link')).tooltip();
     }
   }
 

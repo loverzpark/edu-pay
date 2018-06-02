@@ -207,10 +207,10 @@ export class MenuService {
 
   public showActiveSubMenu(menu:Array<Menu>){
       let url = this.location.path();
-      let routerLink = url; //url.substring(1, url.length);
-      let activeMenuItem = menu.filter(item => item.routerLink === routerLink);
+      const routerLink = url; //url.substring(1, url.length);
+      const activeMenuItem = menu.filter(item => item.routerLink === routerLink);
       if(activeMenuItem[0]){
-          let activeLink = document.querySelector("#link"+activeMenuItem[0].id);      
+          const activeLink = document.querySelector("#link"+activeMenuItem[0].id);      
           let parent = this.renderer2.parentNode(activeLink);
           while (this.renderer2.parentNode(parent)){         
               parent = this.renderer2.parentNode(parent);
