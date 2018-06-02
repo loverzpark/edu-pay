@@ -10,11 +10,11 @@ import { FormGroup, FormControl, AbstractControl, FormBuilder, Validators} from 
 })
 export class LoginComponent {
   public router: Router;
-  public form:FormGroup;
-  public email:AbstractControl;
-  public password:AbstractControl;
+  public form: FormGroup;
+  public email: AbstractControl;
+  public password: AbstractControl;
 
-  constructor(router:Router, fb:FormBuilder) {
+  constructor(router: Router, fb: FormBuilder) {
       this.router = router;
       this.form = fb.group({
           'email': ['', Validators.compose([Validators.required, emailValidator])],
@@ -25,7 +25,7 @@ export class LoginComponent {
       this.password = this.form.controls['password'];
   }
 
-  public onSubmit(values:Object):void {
+  public onSubmit(values: Object): void {
       if (this.form.valid) {
           this.router.navigate(['pages/dashboard']);
       }

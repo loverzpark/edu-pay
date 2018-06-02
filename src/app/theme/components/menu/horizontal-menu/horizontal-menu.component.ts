@@ -24,7 +24,7 @@ export class HorizontalMenuComponent implements OnInit {
           if (event instanceof NavigationEnd) {
               window.scrollTo(0, 0);
               const activeLink = this.menuService.getActiveLink(this.menuItems);
-              this.menuService.setActiveLink(this.menuItems, activeLink); 
+              this.menuService.setActiveLink(this.menuItems, activeLink);
               (<any>$('.tooltip')).tooltip('hide');
           }
       });
